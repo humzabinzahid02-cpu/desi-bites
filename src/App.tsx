@@ -76,9 +76,9 @@ export default function App() {
         <SectionMarquee
           items={[
             'Fresh Halwa Puri',
-            'Hand-Stuffed Aloo Parathas',
-            'Karak Doodh Patti Chai',
-            'Suji Ka Halwa',
+            'Hand-Stuffed Aloo Paratha',
+            'Chicken Cheese Paratha',
+            'Fluffy Cheese Omelette',
             'Morning Nashta 7 AM – 11 AM',
             'Ghar Ka Zaiqa',
           ]}

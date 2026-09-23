@@ -68,7 +68,7 @@ export default function About() {
               Desi Bite has been cooking for the mohalla for years.
             </h2>
             <p className="font-['Mukta'] text-base sm:text-lg text-[#2B1B12]/85 leading-relaxed mb-4">
-              What started as breakfast for the family became breakfast for the whole street. Every puri is rolled by hand, every paratha is stuffed fresh, and the chai is always on the boil.
+              What started as breakfast for the family became breakfast for the whole street. Every puri is rolled by hand, every paratha is stuffed fresh, and every order is cooked hot with love.
             </p>
             <p className="font-['Mukta'] text-base text-[#2B1B12]/75 leading-relaxed mb-6">
               This page brings that same kitchen online — pick what you want, build your chit, and we'll get it steaming hot and ready for your morning table.
@@ -87,7 +87,7 @@ export default function About() {
                 Made the way Baji makes it at home
               </h3>
               <p className="font-['Mukta'] text-sm text-[#FAF0D5]/80 leading-relaxed mb-6">
-                Golden crispy puris fried on order, spiced chickpeas slow-simmered in rich gravy, and piping hot doodh patti chai.
+                Golden crispy puris fried on order, spiced chickpeas slow-simmered in rich gravy, and authentic suji halwa.
               </p>
 
               <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/10">

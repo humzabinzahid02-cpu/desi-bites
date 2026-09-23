@@ -1,13 +1,15 @@
 const ITEMS = [
-  'Halwa Puri',
-  'Aloo Paratha',
-  'Doodh Patti Chai',
-  'Suji Halwa',
+  'Puri with Chanay / Halwa',
+  'Sada Paratha',
+  'Aloo Wala Paratha',
   'Anda Paratha',
-  'Chana Plate',
-  'Sweet Lassi',
-  'Plain Paratha',
-  'Fresh Morning Nashta',
+  'Cheeni Paratha',
+  'Chicken Cheese Paratha',
+  'Chocolate Paratha',
+  'Cheese Omelette',
+  'Meetha Anda',
+  'Plain / Half Fry Egg',
+  'Baji Nazia Ka Home Kitchen',
 ]
 
 export default function Ticker() {

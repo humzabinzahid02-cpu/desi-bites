@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import { FluidMorphBg, DESI_HERO_COLORS } from './FluidMorphBg'
 
-const FLIP_WORDS = ['WITH LOVE', 'FRESH CHAI', 'GHAR KA ZAIQA', 'HOT PURIS', 'DESI LAZZAT']
+const FLIP_WORDS = ['WITH LOVE', 'HOT PURIS', 'GHAR KA ZAIQA', 'CRISPY PARATHA', 'DESI LAZZAT']
 
 export default function Hero() {
   const [wordIdx, setWordIdx] = useState(0)
@@ -107,7 +107,7 @@ export default function Hero() {
 
             {/* Hero Subtitle */}
             <p className="font-['Mukta'] text-sm sm:text-base lg:text-lg text-[#2B1B12]/80 max-w-xl leading-relaxed mt-2 mb-6 sm:mb-8">
-              Fresh halwa puri, stuffed parathas, and desi chai — made the way baji makes it at home. Browse the menu, build your order chit, and send it straight to us on WhatsApp.
+              Fresh halwa puri, crispy stuffed parathas, and farm-fresh eggs — made the way baji makes it at home. Browse the menu, build your order chit, and send it straight to us on WhatsApp.
             </p>
 
             {/* Action Buttons */}

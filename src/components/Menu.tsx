@@ -4,11 +4,10 @@ export interface MenuItem {
   id: string
   name: string
   nameUrdu: string
-  category: 'puri' | 'paratha' | 'eggs' | 'drinks'
+  category: 'puri' | 'parathas' | 'eggs'
   price: number
   desc: string
   tag?: string
-  portion?: string
 }
 
 export interface CartItem {
@@ -17,98 +16,89 @@ export interface CartItem {
 }
 
 export const MENU_ITEMS: MenuItem[] = [
-  // Puri & Nashta
+  // 1. Puri
   {
     id: 'puri-chanay-halwa',
-    name: '1 Puri + Chanay + Halwa',
+    name: 'Puri with Chanay / Halwa',
     nameUrdu: '۱ پوری + چنے + حلوہ',
     category: 'puri',
     price: 80,
-    desc: 'Freshly fried hot puffed puri served with spiced chickpeas and sweet suji halwa.',
+    desc: '1 fresh hot puri served with spiced chickpeas (chana) and sweet suji halwa.',
     tag: 'NASHTA SPECIAL',
-    portion: '1 Puri + Chanay + Halwa',
   },
 
-  // Hand-Stuffed & Tawa Parathas
-  {
-    id: 'aloo-paratha',
-    name: 'Aloo Wala Paratha',
-    nameUrdu: 'آلو والا پراٹھا',
-    category: 'paratha',
-    price: 100,
-    desc: 'Stuffed fresh with spiced mashed potatoes, green chilies, and coriander.',
-    tag: 'POPULAR',
-    portion: '1 Large Paratha',
-  },
+  // 2. Parathas
   {
     id: 'sada-paratha',
     name: 'Sada Paratha',
     nameUrdu: 'سادہ پراٹھا',
-    category: 'paratha',
+    category: 'parathas',
     price: 80,
-    desc: 'Classic crispy layered tawa paratha pan-toasted with desi touch.',
-    portion: '1 Flaky Paratha',
+    desc: 'Freshly rolled flaky layered tawa paratha made with love at home.',
+  },
+  {
+    id: 'aloo-paratha',
+    name: 'Aloo Wala Paratha',
+    nameUrdu: 'آلو والا پراٹھا',
+    category: 'parathas',
+    price: 100,
+    desc: 'Fresh tawa paratha stuffed with spiced potato filling.',
+    tag: 'POPULAR',
   },
   {
     id: 'anda-paratha',
     name: 'Anda Paratha',
     nameUrdu: 'انڈا پراٹھا',
-    category: 'paratha',
+    category: 'parathas',
     price: 150,
-    desc: 'Layered paratha with spiced egg folding for a wholesome breakfast.',
+    desc: 'Layered paratha with spiced egg folding for breakfast.',
     tag: 'BESTSELLER',
-    portion: '1 Stuffed Paratha',
   },
   {
     id: 'cheeni-paratha',
     name: 'Cheeni Paratha',
     nameUrdu: 'چینی پراٹھا',
-    category: 'paratha',
+    category: 'parathas',
     price: 120,
     desc: 'Traditional sweet layered paratha caramelized with melting sugar.',
     tag: 'SWEET',
-    portion: '1 Sweet Paratha',
   },
   {
     id: 'chicken-cheese-paratha',
     name: 'Chicken Cheese Paratha',
     nameUrdu: 'چکن چیز پراٹھا',
-    category: 'paratha',
+    category: 'parathas',
     price: 350,
-    desc: 'Loaded with tender shredded spiced chicken and melted mozzarella cheese.',
-    tag: 'CHEF SPECIAL',
-    portion: '1 Heavy Stuffed Paratha',
+    desc: 'Loaded with shredded spiced chicken and melted mozzarella cheese.',
+    tag: 'SPECIAL',
   },
   {
     id: 'chocolate-paratha',
     name: 'Chocolate Paratha',
     nameUrdu: 'چاکلیٹ پراٹھا',
-    category: 'paratha',
+    category: 'parathas',
     price: 250,
-    desc: 'Crispy flaky paratha drizzled and stuffed with rich chocolate spread.',
-    tag: 'KIDS FAVORITE',
-    portion: '1 Dessert Paratha',
+    desc: 'Crispy layered paratha filled with rich chocolate spread.',
+    tag: 'DESSERT',
   },
 
-  // Eggs & Omelettes
+  // 3. Eggs
   {
-    id: 'half-fry-egg',
+    id: 'plain-half-fry-egg',
     name: 'Plain / Half Fry Egg',
     nameUrdu: 'پلین / ہاف فرائی انڈا',
     category: 'eggs',
     price: 50,
-    desc: 'Farm egg fried sunny side up or plain to your perfection.',
-    portion: '1 Fried Egg',
+    desc: 'Fresh farm egg fried sunny side up or plain.',
   },
   {
     id: 'omelette',
-    name: 'Classic Omelette',
+    name: 'Omelette',
     nameUrdu: 'آملیٹ',
     category: 'eggs',
     price: 100,
-    desc: 'Whisked with onions, fresh tomatoes, green chilies, and black pepper.',
+    desc: 'Whisked with onions, green chilies, tomatoes, and herbs.',
     tag: 'FRESH',
-    portion: '1 Full Omelette',
   },
   {
     id: 'meetha-anda',
@@ -116,8 +106,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameUrdu: 'میٹھا انڈا',
     category: 'eggs',
     price: 70,
-    desc: 'Traditional sweetened scrambled egg cooked gently in desi ghee.',
-    portion: '1 Serving',
+    desc: 'Traditional sweet egg scramble prepared with sugar.',
   },
   {
     id: 'cheese-omelette',
@@ -125,40 +114,16 @@ export const MENU_ITEMS: MenuItem[] = [
     nameUrdu: 'چیز آملیٹ',
     category: 'eggs',
     price: 200,
-    desc: 'Fluffy omelette folded with melting cheese slices and fresh herbs.',
-    tag: 'PREMIUM',
-    portion: '1 Cheesy Omelette',
-  },
-
-  // Chai & Drinks
-  {
-    id: 'doodh-patti',
-    name: 'Doodh Patti Chai',
-    nameUrdu: 'دودھ پتی چائے',
-    category: 'drinks',
-    price: 80,
-    desc: 'Strong brewed milk tea with green cardamom — freshly prepared.',
-    tag: 'MUST HAVE',
-    portion: '1 Hot Cup',
-  },
-  {
-    id: 'sweet-lassi',
-    name: 'Sweet Lassi',
-    nameUrdu: 'میٹھی لسی',
-    category: 'drinks',
-    price: 150,
-    desc: 'Traditional creamy yogurt lassi served chilled.',
-    tag: 'CHILLED',
-    portion: 'Large Glass',
+    desc: 'Fluffy farm omelette stuffed with melted cheese.',
+    tag: 'CHEESY',
   },
 ]
 
 const CATEGORIES = [
   { id: 'all', label: 'All Items' },
   { id: 'puri', label: 'Puri & Chanay' },
-  { id: 'paratha', label: 'Handmade Parathas' },
+  { id: 'parathas', label: 'Parathas' },
   { id: 'eggs', label: 'Eggs & Omelettes' },
-  { id: 'drinks', label: 'Chai & Drinks' },
 ]
 
 interface MenuProps {
@@ -189,14 +154,14 @@ export default function Menu({ cart, onUpdateQty }: MenuProps) {
     if (cart.length === 0) return
 
     const lines: string[] = []
-    lines.push('*Baji Nazia Ka Home Kitchen (Desi Bite)*')
-    lines.push('*Daily Fresh Nashta Order*')
+    lines.push('*Baji Nazia Ka Home Kitchen*')
+    lines.push('*Daily Fresh & Homemade Menu Order*')
     lines.push('')
 
     let total = 0
     cart.forEach(ci => {
       total += ci.qty * ci.item.price
-      lines.push(`• ${ci.item.name} x${ci.qty} - Rs. ${ci.qty * ci.item.price}`)
+      lines.push(`• ${ci.item.name} (${ci.item.nameUrdu}) x${ci.qty} - Rs. ${ci.qty * ci.item.price}`)
     })
 
     lines.push('')
@@ -212,7 +177,7 @@ export default function Menu({ cart, onUpdateQty }: MenuProps) {
     if (address) lines.push(`Delivery Address: ${address}`)
 
     const message = encodeURIComponent(lines.join('\n'))
-    // Official WhatsApp: 03098027782 (+92 309 8027782)
+    // Official WhatsApp Number: 03098027782
     window.open(`https://wa.me/923098027782?text=${message}`, '_blank')
     setOrderSent(true)
     setTimeout(() => setOrderSent(false), 5000)
@@ -226,17 +191,17 @@ export default function Menu({ cart, onUpdateQty }: MenuProps) {
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
           <div className="inline-flex items-center gap-2 font-['Mukta'] text-[11px] sm:text-xs tracking-[0.25em] uppercase font-bold text-[#8C2F1B] bg-white/80 px-3.5 py-1.5 rounded-full border border-[#8C2F1B]/15 shadow-xs mb-3">
             <span className="w-2 h-2 rounded-full bg-[#E8A63D]" />
-            DAILY FRESH &amp; HOMEMADE MENU
+            BAJI NAZIA KA HOME KITCHEN • DAILY FRESH
           </div>
           <h2 className="font-['Baloo_2'] font-black text-3xl sm:text-5xl lg:text-6xl text-[#5C1D10] uppercase tracking-tight leading-[1] mb-3">
-            Baji Nazia Ka Nashta
+            ناشتہ مینو • Nashta Menu
           </h2>
           <p className="font-['Mukta'] text-sm sm:text-base text-[#2B1B12]/80 leading-relaxed max-w-xl mx-auto">
-            100% Ghar Ka Khana • Halal &amp; Delicious. Tap <span className="font-bold text-[#8C2F1B]">+</span> to build your order chit and send directly to WhatsApp.
+            100% Ghar Ka Khana • Halal &amp; Delicious. Tap <span className="font-bold text-[#8C2F1B]">+</span> on any item to build your order chit.
           </p>
 
           {/* Pre-order banner notice from menu poster */}
-          <div className="mt-4 inline-block bg-white/90 border border-[#E8A63D]/40 rounded-xl px-4 py-2 text-xs sm:text-sm text-[#8C2F1B] font-['Mukta'] font-semibold shadow-xs">
+          <div className="mt-4 inline-block bg-white/95 border border-[#E8A63D]/40 rounded-xl px-4 py-2 text-xs sm:text-sm text-[#8C2F1B] font-['Mukta'] font-semibold shadow-xs">
             ✨ <span className="font-['Noto_Nastaliq_Urdu',serif] font-bold text-sm sm:text-base ml-1">پیشگی آرڈر پر خصوصی پکوان دستیاب ہیں</span> • Special dishes available upon pre-order
           </div>
         </div>
@@ -271,10 +236,10 @@ export default function Menu({ cart, onUpdateQty }: MenuProps) {
                   className="bg-white rounded-2xl p-4 sm:p-5 border border-[#8C2F1B]/10 shadow-[0_4px_16px_rgba(92,29,16,0.04)] hover:shadow-[0_8px_24px_rgba(92,29,16,0.08)] hover:border-[#8C2F1B]/25 transition-all duration-200 flex flex-col justify-between"
                 >
                   <div>
-                    {/* Top Row: Tag / Portion */}
-                    <div className="flex items-center justify-between gap-2 mb-1.5">
+                    {/* Top Row: Tag */}
+                    <div className="flex items-center justify-between gap-2 mb-1.5 min-h-[22px]">
                       <span className="font-['Mukta'] text-[11px] font-bold tracking-wider text-[#8C2F1B]/70 uppercase">
-                        {item.portion || 'Fresh Nashta'}
+                        Ghar Ka Khana
                       </span>
                       {item.tag && (
                         <span className="font-['Baloo_2'] text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-[#E8A63D]/20 text-[#8C2F1B] border border-[#E8A63D]/40">
@@ -289,7 +254,7 @@ export default function Menu({ cart, onUpdateQty }: MenuProps) {
                         {item.name}
                       </h3>
                     </div>
-                    <div dir="rtl" className="font-['Noto_Nastaliq_Urdu',serif] text-sm sm:text-base font-bold text-[#8C2F1B] mb-2 leading-relaxed">
+                    <div dir="rtl" className="font-['Noto_Nastaliq_Urdu',serif] text-base sm:text-lg font-bold text-[#8C2F1B] mb-2 leading-relaxed">
                       {item.nameUrdu}
                     </div>
 
@@ -302,7 +267,7 @@ export default function Menu({ cart, onUpdateQty }: MenuProps) {
                   {/* Bottom Row: Price & Add Controls */}
                   <div className="pt-3 border-t border-[#8C2F1B]/10 flex items-center justify-between">
                     <div>
-                      <span className="font-['Mukta'] text-[11px] text-[#8C2F1B] font-bold block">PRICE</span>
+                      <span className="font-['Mukta'] text-[11px] text-[#8C2F1B] font-bold block">RATE</span>
                       <span className="font-['Baloo_2'] font-black text-xl sm:text-2xl text-[#5C1D10]">
                         Rs. {item.price}
                       </span>
@@ -334,7 +299,7 @@ export default function Menu({ cart, onUpdateQty }: MenuProps) {
                         </span>
                         <button
                           onClick={() => onUpdateQty(item, 1)}
-                          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#8C2F1B] text-white font-black text-sm flex items-center justify-center hover:bg-[#5C1D10] transition-colors cursor-pointer shadow-xs"
+                          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#8C2F1B] text-white font-black text-base flex items-center justify-center hover:bg-[#5C1D10] transition-colors cursor-pointer shadow-xs"
                           aria-label="Increase quantity"
                         >
                           +

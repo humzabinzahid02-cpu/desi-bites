@@ -59,7 +59,7 @@ export default function CTA({ onOrderClick }: CTAProps) {
 
             {/* Subtitle */}
             <p className="font-['Mukta'] text-base sm:text-lg text-[#FAF0D5]/75 max-w-xl leading-relaxed mb-8">
-              Fresh halwa puri, stuffed parathas and desi chai — made the way baji makes it at home. Browse the menu, build your order, and send it straight to us on WhatsApp.
+              Fresh halwa puri, crispy stuffed parathas, and farm-fresh eggs — made the way baji makes it at home. Browse the menu, build your order, and send it straight to us on WhatsApp.
             </p>
 
             {/* Action Buttons */}
