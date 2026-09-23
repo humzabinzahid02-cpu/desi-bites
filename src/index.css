@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700&family=Mukta:wght@300;400;500;600;700&family=Courier+Prime:wght@400;700&family=Noto+Nastaliq+Urdu:wght@500;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Baloo 2', sans-serif;
+  --font-body: 'Mukta', sans-serif;
+  --font-receipt: 'Courier Prime', monospace;
+  --font-urdu: 'Noto Nastaliq Urdu', serif;
+
+  --color-cream: #FBF1DE;
+  --color-paper: #FFFBF2;
+  --color-maroon: #8C2F1B;
+  --color-maroon-dark: #5C1D10;
+  --color-turmeric: #E8A63D;
+  --color-turmeric-light: #F4CE7F;
+  --color-turmeric-dark: #C9892A;
+  --color-charcoal: #2B1B12;
+  --color-green: #3FA34D;
+  --color-green-dark: #2E7A39;
+  --color-line: rgba(43,27,18,0.13);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+a, button {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+a:focus, button:focus {
+  outline: none;
+}
+a:focus-visible, button:focus-visible {
+  outline: 2px solid #E8A63D;
+  outline-offset: 2px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: #FBF1DE;
+  color: #2B1B12;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #FBF1DE; }
+::-webkit-scrollbar-thumb { background: #F4CE7F; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #8C2F1B; }
+
+/* dot grid bg */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(43,27,18,0.04) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Intro keyframes */
+@keyframes introIn {
+  0%   { opacity: 0; transform: translateY(32px) scale(0.94); filter: blur(6px); }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+@keyframes introOut {
+  0%   { opacity: 1; transform: scale(1); filter: blur(0); }
+  100% { opacity: 0; transform: scale(1.06); filter: blur(8px); }
+}
+
+/* Flip word keyframes */
+@keyframes letterFlipIn {
+  0%   { opacity: 0; transform: rotateX(-90deg) translateY(24px); filter: blur(4px); }
+  60%  { opacity: 1; filter: blur(0); }
+  100% { opacity: 1; transform: rotateX(0deg) translateY(0); filter: blur(0); }
+}
+@keyframes letterFlipOut {
+  0%   { opacity: 1; transform: rotateX(0deg) translateY(0); filter: blur(0); }
+  100% { opacity: 0; transform: rotateX(90deg) translateY(-24px); filter: blur(4px); }
+}
+
+/* Steam animation */
+@keyframes steamRise {
+  0%   { opacity: 0; transform: translateY(8px); }
+  20%  { opacity: 0.55; }
+  70%  { opacity: 0.3; }
+  100% { opacity: 0; transform: translateY(-22px); }
+}
+
+/* Ticker */
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-ticker { animation: ticker 26s linear infinite; }
+
+/* Marquee */
+@keyframes marqueeRTL {
+  from { transform: translateX(-33.333%); }
+  to   { transform: translateX(0); }
+}
+
+/* FAB pulse */
+@keyframes fabPulse {
+  0%,100% { box-shadow: 0 8px 24px rgba(63,163,77,0.4); }
+  50%      { box-shadow: 0 8px 32px rgba(63,163,77,0.65), 0 0 0 8px rgba(63,163,77,0.1); }
+}
+
+/* CTA pulse dot */
+@keyframes ctaPulse {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.5; transform: scale(0.8); }
+}
+
+/* Thali bob */
+@keyframes thaliBob {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+
+/* Glow pulse */
+@keyframes glowPulse {
+  0%,100% { transform: scale(1); opacity: 0.7; }
+  50%      { transform: scale(1.1); opacity: 1; }
+}
+
+/* Reveal */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Nav hamburger mobile */
+@media (max-width: 800px) {
+  .nav-links { display: none !important; }
+  .hamburger { display: flex !important; }
+}
+
+/* Mobile menu animation */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
