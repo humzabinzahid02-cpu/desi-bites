@@ -4,7 +4,7 @@ export interface MenuItem {
   id: string
   name: string
   nameUrdu: string
-  category: 'breakfast' | 'paratha' | 'drinks'
+  category: 'puri' | 'paratha' | 'eggs' | 'drinks'
   price: number
   desc: string
   tag?: string
@@ -17,95 +17,147 @@ export interface CartItem {
 }
 
 export const MENU_ITEMS: MenuItem[] = [
-  // Breakfast / Halwa Puri
+  // Puri & Nashta
   {
-    id: 'halwa-puri',
-    name: 'Halwa Puri',
-    nameUrdu: 'حلوہ پوری',
-    category: 'breakfast',
-    price: 250,
-    desc: '2 puri, suji halwa, chana — made fresh, never from the day before.',
-    tag: 'SIGNATURE NASHTA',
-    portion: '2 Crispy Puris + Halwa + Chana',
-  },
-  {
-    id: 'chana-plate',
-    name: 'Chana Plate',
-    nameUrdu: 'چنے کی پلیٹ',
-    category: 'breakfast',
-    price: 150,
-    desc: 'Slow-simmered spiced chickpeas cooked with traditional spices, served piping hot.',
-    portion: 'Hot Plate with Gravy',
-  },
-  {
-    id: 'halwa-only',
-    name: 'Suji Halwa',
-    nameUrdu: 'سوجی کا حلوہ',
-    category: 'breakfast',
-    price: 120,
-    desc: 'Classic golden semolina halwa cooked in pure desi ghee with cardamom and almond garnishing.',
-    tag: 'SWEET DELIGHT',
-    portion: 'Fresh Bowl',
+    id: 'puri-chanay-halwa',
+    name: '1 Puri + Chanay + Halwa',
+    nameUrdu: '۱ پوری + چنے + حلوہ',
+    category: 'puri',
+    price: 80,
+    desc: 'Freshly fried hot puffed puri served with spiced chickpeas and sweet suji halwa.',
+    tag: 'NASHTA SPECIAL',
+    portion: '1 Puri + Chanay + Halwa',
   },
 
-  // Stuffed Parathas
+  // Hand-Stuffed & Tawa Parathas
   {
     id: 'aloo-paratha',
-    name: 'Aloo Paratha',
-    nameUrdu: 'آلو پراٹھا',
+    name: 'Aloo Wala Paratha',
+    nameUrdu: 'آلو والا پراٹھا',
     category: 'paratha',
-    price: 180,
-    desc: 'Generously stuffed with crushed spiced potatoes, green chilies, and fresh coriander. Served with fresh dahi.',
-    tag: 'BESTSELLER',
-    portion: '1 Large Paratha + Dahi',
+    price: 100,
+    desc: 'Stuffed fresh with spiced mashed potatoes, green chilies, and coriander.',
+    tag: 'POPULAR',
+    portion: '1 Large Paratha',
+  },
+  {
+    id: 'sada-paratha',
+    name: 'Sada Paratha',
+    nameUrdu: 'سادہ پراٹھا',
+    category: 'paratha',
+    price: 80,
+    desc: 'Classic crispy layered tawa paratha pan-toasted with desi touch.',
+    portion: '1 Flaky Paratha',
   },
   {
     id: 'anda-paratha',
     name: 'Anda Paratha',
     nameUrdu: 'انڈا پراٹھا',
     category: 'paratha',
-    price: 200,
-    desc: 'Crispy layered tawa paratha folded with a golden spiced fried egg stuffing.',
-    tag: 'POPULAR',
-    portion: '1 Large Paratha',
+    price: 150,
+    desc: 'Layered paratha with spiced egg folding for a wholesome breakfast.',
+    tag: 'BESTSELLER',
+    portion: '1 Stuffed Paratha',
   },
   {
-    id: 'plain-paratha',
-    name: 'Plain Paratha',
-    nameUrdu: 'سادہ لچھا پراٹھا',
+    id: 'cheeni-paratha',
+    name: 'Cheeni Paratha',
+    nameUrdu: 'چینی پراٹھا',
     category: 'paratha',
-    price: 80,
-    desc: 'Classic Punjabi flaky multi-layered golden paratha, pan-toasted on a heavy cast-iron tawa.',
-    portion: '1 Flaky Paratha',
+    price: 120,
+    desc: 'Traditional sweet layered paratha caramelized with melting sugar.',
+    tag: 'SWEET',
+    portion: '1 Sweet Paratha',
+  },
+  {
+    id: 'chicken-cheese-paratha',
+    name: 'Chicken Cheese Paratha',
+    nameUrdu: 'چکن چیز پراٹھا',
+    category: 'paratha',
+    price: 350,
+    desc: 'Loaded with tender shredded spiced chicken and melted mozzarella cheese.',
+    tag: 'CHEF SPECIAL',
+    portion: '1 Heavy Stuffed Paratha',
+  },
+  {
+    id: 'chocolate-paratha',
+    name: 'Chocolate Paratha',
+    nameUrdu: 'چاکلیٹ پراٹھا',
+    category: 'paratha',
+    price: 250,
+    desc: 'Crispy flaky paratha drizzled and stuffed with rich chocolate spread.',
+    tag: 'KIDS FAVORITE',
+    portion: '1 Dessert Paratha',
+  },
+
+  // Eggs & Omelettes
+  {
+    id: 'half-fry-egg',
+    name: 'Plain / Half Fry Egg',
+    nameUrdu: 'پلین / ہاف فرائی انڈا',
+    category: 'eggs',
+    price: 50,
+    desc: 'Farm egg fried sunny side up or plain to your perfection.',
+    portion: '1 Fried Egg',
+  },
+  {
+    id: 'omelette',
+    name: 'Classic Omelette',
+    nameUrdu: 'آملیٹ',
+    category: 'eggs',
+    price: 100,
+    desc: 'Whisked with onions, fresh tomatoes, green chilies, and black pepper.',
+    tag: 'FRESH',
+    portion: '1 Full Omelette',
+  },
+  {
+    id: 'meetha-anda',
+    name: 'Meetha Anda',
+    nameUrdu: 'میٹھا انڈا',
+    category: 'eggs',
+    price: 70,
+    desc: 'Traditional sweetened scrambled egg cooked gently in desi ghee.',
+    portion: '1 Serving',
+  },
+  {
+    id: 'cheese-omelette',
+    name: 'Cheese Omelette',
+    nameUrdu: 'چیز آملیٹ',
+    category: 'eggs',
+    price: 200,
+    desc: 'Fluffy omelette folded with melting cheese slices and fresh herbs.',
+    tag: 'PREMIUM',
+    portion: '1 Cheesy Omelette',
   },
 
   // Chai & Drinks
   {
     id: 'doodh-patti',
     name: 'Doodh Patti Chai',
-    nameUrdu: 'کڑک دودھ پتی چائے',
+    nameUrdu: 'دودھ پتی چائے',
     category: 'drinks',
     price: 80,
-    desc: 'Strong brewed milk tea with rich tapri blend and green cardamom — always on the boil.',
-    tag: 'MUST TRY',
-    portion: 'Fresh Hot Cup',
+    desc: 'Strong brewed milk tea with green cardamom — freshly prepared.',
+    tag: 'MUST HAVE',
+    portion: '1 Hot Cup',
   },
   {
-    id: 'lassi',
+    id: 'sweet-lassi',
     name: 'Sweet Lassi',
     nameUrdu: 'میٹھی لسی',
     category: 'drinks',
     price: 150,
-    desc: 'Thick, creamy, traditional churned Punjabi sweetened curd lassi, served chilled.',
+    desc: 'Traditional creamy yogurt lassi served chilled.',
     tag: 'CHILLED',
-    portion: 'Large 450ml Glass',
+    portion: 'Large Glass',
   },
 ]
 
 const CATEGORIES = [
   { id: 'all', label: 'All Items' },
-  { id: 'breakfast', label: 'Halwa Puri Nashta' },
-  { id: 'paratha', label: 'Stuffed Parathas' },
+  { id: 'puri', label: 'Puri & Chanay' },
+  { id: 'paratha', label: 'Handmade Parathas' },
+  { id: 'eggs', label: 'Eggs & Omelettes' },
   { id: 'drinks', label: 'Chai & Drinks' },
 ]
 
@@ -137,17 +189,18 @@ export default function Menu({ cart, onUpdateQty }: MenuProps) {
     if (cart.length === 0) return
 
     const lines: string[] = []
-    lines.push('Order - Desi Bite')
+    lines.push('*Baji Nazia Ka Home Kitchen (Desi Bite)*')
+    lines.push('*Daily Fresh Nashta Order*')
     lines.push('')
 
     let total = 0
     cart.forEach(ci => {
       total += ci.qty * ci.item.price
-      lines.push(`${ci.item.name} x${ci.qty} - Rs. ${ci.qty * ci.item.price}`)
+      lines.push(`• ${ci.item.name} x${ci.qty} - Rs. ${ci.qty * ci.item.price}`)
     })
 
     lines.push('')
-    lines.push(`Total: Rs. ${total}`)
+    lines.push(`*Total Amount: Rs. ${total}*`)
     lines.push('')
 
     const name = customerName.trim()
@@ -156,40 +209,45 @@ export default function Menu({ cart, onUpdateQty }: MenuProps) {
 
     if (name) lines.push(`Name: ${name}`)
     if (phone) lines.push(`Phone: ${phone}`)
-    if (address) lines.push(`Address: ${address}`)
+    if (address) lines.push(`Delivery Address: ${address}`)
 
     const message = encodeURIComponent(lines.join('\n'))
-    // Official Desi Bite WhatsApp number from desi-bite.netlify.app
-    window.open(`https://wa.me/923291807782?text=${message}`, '_blank')
+    // Official WhatsApp: 03098027782 (+92 309 8027782)
+    window.open(`https://wa.me/923098027782?text=${message}`, '_blank')
     setOrderSent(true)
     setTimeout(() => setOrderSent(false), 5000)
   }
 
   return (
-    <section id="menu" className="relative w-full bg-[#FAF0D5] py-20 px-4 sm:px-6 lg:px-8">
+    <section id="menu" className="relative w-full bg-[#FAF0D5] py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         
-        {/* Section Heading matching https://desi-bite.netlify.app/ */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 font-['Mukta'] text-xs tracking-[0.3em] uppercase font-bold text-[#8C2F1B] bg-white/80 backdrop-blur-xs px-4 py-1.5 rounded-full border border-[#8C2F1B]/15 shadow-2xs mb-3">
+        {/* Section Heading */}
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+          <div className="inline-flex items-center gap-2 font-['Mukta'] text-[11px] sm:text-xs tracking-[0.25em] uppercase font-bold text-[#8C2F1B] bg-white/80 px-3.5 py-1.5 rounded-full border border-[#8C2F1B]/15 shadow-xs mb-3">
             <span className="w-2 h-2 rounded-full bg-[#E8A63D]" />
-            FRESH MORNING NASHTA • 7:00 AM – 11:00 AM
+            DAILY FRESH &amp; HOMEMADE MENU
           </div>
-          <h2 className="font-['Baloo_2'] font-black text-4xl sm:text-5xl lg:text-6xl text-[#5C1D10] uppercase tracking-tight leading-[0.95] mb-3">
-            Everything's made fresh, same day.
+          <h2 className="font-['Baloo_2'] font-black text-3xl sm:text-5xl lg:text-6xl text-[#5C1D10] uppercase tracking-tight leading-[1] mb-3">
+            Baji Nazia Ka Nashta
           </h2>
-          <p className="font-['Mukta'] text-base sm:text-lg text-[#2B1B12]/80 leading-relaxed">
-            Tap the <span className="font-bold text-[#8C2F1B]">+</span> on anything you'd like — your order chit builds itself on the right, ready to send straight to WhatsApp.
+          <p className="font-['Mukta'] text-sm sm:text-base text-[#2B1B12]/80 leading-relaxed max-w-xl mx-auto">
+            100% Ghar Ka Khana • Halal &amp; Delicious. Tap <span className="font-bold text-[#8C2F1B]">+</span> to build your order chit and send directly to WhatsApp.
           </p>
+
+          {/* Pre-order banner notice from menu poster */}
+          <div className="mt-4 inline-block bg-white/90 border border-[#E8A63D]/40 rounded-xl px-4 py-2 text-xs sm:text-sm text-[#8C2F1B] font-['Mukta'] font-semibold shadow-xs">
+            ✨ <span className="font-['Noto_Nastaliq_Urdu',serif] font-bold text-sm sm:text-base ml-1">پیشگی آرڈر پر خصوصی پکوان دستیاب ہیں</span> • Special dishes available upon pre-order
+          </div>
         </div>
 
         {/* Category Pills Bar */}
-        <div className="flex items-center justify-start sm:justify-center gap-2 sm:gap-3 overflow-x-auto pb-4 mb-10 no-scrollbar">
+        <div className="flex items-center justify-start sm:justify-center gap-2 sm:gap-3 overflow-x-auto pb-3 mb-8 no-scrollbar">
           {CATEGORIES.map(cat => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`font-['Baloo_2'] text-sm sm:text-base font-bold uppercase tracking-wider px-6 py-2.5 rounded-full whitespace-nowrap transition-all duration-200 cursor-pointer ${
+              className={`font-['Baloo_2'] text-xs sm:text-sm font-bold uppercase tracking-wider px-4 sm:px-5 py-2 sm:py-2.5 rounded-full whitespace-nowrap transition-all duration-200 cursor-pointer ${
                 activeCategory === cat.id
                   ? 'bg-gradient-to-r from-[#8C2F1B] to-[#5C1D10] text-white shadow-md shadow-[#8C2F1B]/20 scale-105'
                   : 'bg-white/80 text-[#5C1D10] hover:bg-white border border-[#8C2F1B]/15 hover:border-[#8C2F1B]/30'
@@ -200,43 +258,43 @@ export default function Menu({ cart, onUpdateQty }: MenuProps) {
           ))}
         </div>
 
-        {/* 2-Column Layout: Menu Grid (8 cols) + Sticky Order Chit (4 cols) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        {/* 2-Column Responsive Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
           
           {/* Menu Cards Grid */}
-          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
             {filteredItems.map(item => {
               const qty = getItemQty(item.id)
               return (
                 <div
                   key={item.id}
-                  className="bg-white rounded-2xl p-5 border border-[#8C2F1B]/10 shadow-[0_4px_16px_rgba(92,29,16,0.04)] hover:shadow-[0_8px_24px_rgba(92,29,16,0.08)] hover:border-[#8C2F1B]/25 transition-all duration-200 flex flex-col justify-between"
+                  className="bg-white rounded-2xl p-4 sm:p-5 border border-[#8C2F1B]/10 shadow-[0_4px_16px_rgba(92,29,16,0.04)] hover:shadow-[0_8px_24px_rgba(92,29,16,0.08)] hover:border-[#8C2F1B]/25 transition-all duration-200 flex flex-col justify-between"
                 >
                   <div>
                     {/* Top Row: Tag / Portion */}
-                    <div className="flex items-center justify-between gap-2 mb-2">
+                    <div className="flex items-center justify-between gap-2 mb-1.5">
                       <span className="font-['Mukta'] text-[11px] font-bold tracking-wider text-[#8C2F1B]/70 uppercase">
                         {item.portion || 'Fresh Nashta'}
                       </span>
                       {item.tag && (
-                        <span className="font-['Baloo_2'] text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded-full bg-[#E8A63D]/20 text-[#8C2F1B] border border-[#E8A63D]/40">
+                        <span className="font-['Baloo_2'] text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-[#E8A63D]/20 text-[#8C2F1B] border border-[#E8A63D]/40">
                           {item.tag}
                         </span>
                       )}
                     </div>
 
                     {/* Title & Urdu */}
-                    <div className="flex items-baseline justify-between gap-2 mb-1">
-                      <h3 className="font-['Baloo_2'] font-bold text-xl text-[#5C1D10] leading-snug">
+                    <div className="flex items-baseline justify-between gap-2">
+                      <h3 className="font-['Baloo_2'] font-bold text-lg sm:text-xl text-[#5C1D10] leading-snug">
                         {item.name}
                       </h3>
                     </div>
-                    <div dir="rtl" className="font-['Noto_Nastaliq_Urdu',serif] text-base font-bold text-[#8C2F1B] mb-2 leading-relaxed">
+                    <div dir="rtl" className="font-['Noto_Nastaliq_Urdu',serif] text-sm sm:text-base font-bold text-[#8C2F1B] mb-2 leading-relaxed">
                       {item.nameUrdu}
                     </div>
 
                     {/* Description */}
-                    <p className="font-['Mukta'] text-sm text-[#2B1B12]/75 leading-relaxed mb-4">
+                    <p className="font-['Mukta'] text-xs sm:text-sm text-[#2B1B12]/75 leading-relaxed mb-4">
                       {item.desc}
                     </p>
                   </div>
@@ -244,8 +302,8 @@ export default function Menu({ cart, onUpdateQty }: MenuProps) {
                   {/* Bottom Row: Price & Add Controls */}
                   <div className="pt-3 border-t border-[#8C2F1B]/10 flex items-center justify-between">
                     <div>
-                      <span className="font-['Mukta'] text-xs text-[#8C2F1B] font-bold block">PRICE</span>
-                      <span className="font-['Baloo_2'] font-black text-2xl text-[#5C1D10]">
+                      <span className="font-['Mukta'] text-[11px] text-[#8C2F1B] font-bold block">PRICE</span>
+                      <span className="font-['Baloo_2'] font-black text-xl sm:text-2xl text-[#5C1D10]">
                         Rs. {item.price}
                       </span>
                     </div>
@@ -254,9 +312,9 @@ export default function Menu({ cart, onUpdateQty }: MenuProps) {
                     {qty === 0 ? (
                       <button
                         onClick={() => onUpdateQty(item, 1)}
-                        className="inline-flex items-center gap-1.5 font-['Baloo_2'] font-bold text-sm uppercase tracking-wider text-white bg-gradient-to-r from-[#8C2F1B] to-[#5C1D10] hover:from-[#5C1D10] hover:to-[#8C2F1B] px-5 py-2.5 rounded-full shadow-xs cursor-pointer transition-all active:scale-95"
+                        className="inline-flex items-center gap-1.5 font-['Baloo_2'] font-bold text-xs sm:text-sm uppercase tracking-wider text-white bg-gradient-to-r from-[#8C2F1B] to-[#5C1D10] hover:from-[#5C1D10] hover:to-[#8C2F1B] px-4 sm:px-5 py-2 rounded-full shadow-xs cursor-pointer transition-all active:scale-95"
                       >
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                           <line x1="12" y1="5" x2="12" y2="19"/>
                           <line x1="5" y1="12" x2="19" y2="12"/>
                         </svg>
@@ -266,17 +324,17 @@ export default function Menu({ cart, onUpdateQty }: MenuProps) {
                       <div className="flex items-center gap-2 bg-[#FBF1DE] rounded-full p-1 border border-[#8C2F1B]/20">
                         <button
                           onClick={() => onUpdateQty(item, -1)}
-                          className="w-8 h-8 rounded-full bg-white text-[#8C2F1B] font-black text-base flex items-center justify-center hover:bg-[#8C2F1B] hover:text-white transition-colors cursor-pointer shadow-xs"
+                          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-[#8C2F1B] font-black text-sm flex items-center justify-center hover:bg-[#8C2F1B] hover:text-white transition-colors cursor-pointer shadow-xs"
                           aria-label="Decrease quantity"
                         >
                           -
                         </button>
-                        <span className="font-['Baloo_2'] font-black text-lg text-[#5C1D10] px-2">
+                        <span className="font-['Baloo_2'] font-black text-base sm:text-lg text-[#5C1D10] px-1.5">
                           {qty}
                         </span>
                         <button
                           onClick={() => onUpdateQty(item, 1)}
-                          className="w-8 h-8 rounded-full bg-[#8C2F1B] text-white font-black text-base flex items-center justify-center hover:bg-[#5C1D10] transition-colors cursor-pointer shadow-xs"
+                          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#8C2F1B] text-white font-black text-sm flex items-center justify-center hover:bg-[#5C1D10] transition-colors cursor-pointer shadow-xs"
                           aria-label="Increase quantity"
                         >
                           +
@@ -290,19 +348,19 @@ export default function Menu({ cart, onUpdateQty }: MenuProps) {
           </div>
 
           {/* Sticky Order Chit (Receipt) */}
-          <div className="lg:col-span-4 sticky top-24" id="order">
-            <div className="bg-[#FFFFFF] rounded-2xl border-2 border-dashed border-[#8C2F1B]/25 p-6 shadow-xl relative overflow-hidden">
+          <div className="lg:col-span-4 lg:sticky lg:top-24 w-full" id="order">
+            <div className="bg-[#FFFFFF] rounded-2xl border-2 border-dashed border-[#8C2F1B]/25 p-5 sm:p-6 shadow-xl relative overflow-hidden">
               
               {/* Receipt Header */}
-              <div className="text-center pb-4 border-b border-[#8C2F1B]/15">
+              <div className="text-center pb-3 border-b border-[#8C2F1B]/15">
                 <div className="font-['Courier_Prime'] text-xs font-bold uppercase tracking-widest text-[#8C2F1B]">
                   ═════════════════════════
                 </div>
-                <h3 className="font-['Baloo_2'] font-black text-2xl text-[#5C1D10] uppercase tracking-wider mt-1">
+                <h3 className="font-['Baloo_2'] font-black text-xl sm:text-2xl text-[#5C1D10] uppercase tracking-wider mt-1">
                   Order Chit
                 </h3>
                 <p className="font-['Courier_Prime'] text-[11px] text-[#2B1B12]/70 uppercase tracking-wider">
-                  Desi Bite • WhatsApp: +92 329 1807782
+                  Baji Nazia • WhatsApp: 03098027782
                 </p>
                 <div className="font-['Courier_Prime'] text-xs font-bold uppercase tracking-widest text-[#8C2F1B]">
                   ═════════════════════════
@@ -310,19 +368,19 @@ export default function Menu({ cart, onUpdateQty }: MenuProps) {
               </div>
 
               {/* Items List */}
-              <div className="py-4 min-h-[140px] max-h-[260px] overflow-y-auto">
+              <div className="py-3 min-h-[120px] max-h-[240px] overflow-y-auto">
                 {cart.length === 0 ? (
                   <div className="h-full flex flex-col items-center justify-center text-center py-6 text-[#8C2F1B]/60 font-['Mukta']">
-                    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="mb-2 opacity-50">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="mb-2 opacity-50">
                       <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
                       <line x1="3" y1="6" x2="21" y2="6"/>
                       <path d="M16 10a4 4 0 0 1-8 0"/>
                     </svg>
                     <p className="text-sm font-bold">Your order is empty.</p>
-                    <p className="text-xs">Add something tasty from the menu</p>
+                    <p className="text-xs">Add items from the menu above</p>
                   </div>
                 ) : (
-                  <div className="space-y-3 font-['Courier_Prime'] text-xs">
+                  <div className="space-y-2.5 font-['Courier_Prime'] text-xs">
                     {cart.map(ci => (
                       <div key={ci.item.id} className="flex items-center justify-between gap-2 border-b border-gray-100 pb-2">
                         <div className="flex-1">
@@ -339,7 +397,7 @@ export default function Menu({ cart, onUpdateQty }: MenuProps) {
                           </span>
                           <button
                             onClick={() => onUpdateQty(ci.item, -ci.qty)}
-                            className="text-red-500 hover:text-red-700 font-bold px-1 cursor-pointer"
+                            className="text-red-500 hover:text-red-700 font-bold px-1 cursor-pointer text-sm"
                             title="Remove"
                           >
                             ×
@@ -352,7 +410,7 @@ export default function Menu({ cart, onUpdateQty }: MenuProps) {
               </div>
 
               {/* Bill Totals */}
-              <div className="pt-3 border-t border-[#8C2F1B]/15 space-y-1.5 font-['Courier_Prime'] text-xs">
+              <div className="pt-2 border-t border-[#8C2F1B]/15 space-y-1 font-['Courier_Prime'] text-xs">
                 <div className="flex justify-between text-base font-bold text-[#5C1D10] pt-1">
                   <span>TOTAL:</span>
                   <span>Rs. {grandTotal}</span>
@@ -360,27 +418,27 @@ export default function Menu({ cart, onUpdateQty }: MenuProps) {
               </div>
 
               {/* Customer Delivery Input Fields */}
-              <div className="mt-4 space-y-2.5 font-['Mukta']">
+              <div className="mt-3.5 space-y-2 font-['Mukta']">
                 <input
                   type="text"
                   placeholder="Your Name (optional)"
                   value={customerName}
                   onChange={e => setCustomerName(e.target.value)}
-                  className="w-full text-xs px-3.5 py-2 rounded-lg bg-[#FAF0D5]/50 border border-[#8C2F1B]/20 focus:outline-none focus:border-[#8C2F1B]"
+                  className="w-full text-xs px-3 py-2 rounded-lg bg-[#FAF0D5]/50 border border-[#8C2F1B]/20 focus:outline-none focus:border-[#8C2F1B]"
                 />
                 <input
                   type="tel"
                   placeholder="Phone Number (optional)"
                   value={customerPhone}
                   onChange={e => setCustomerPhone(e.target.value)}
-                  className="w-full text-xs px-3.5 py-2 rounded-lg bg-[#FAF0D5]/50 border border-[#8C2F1B]/20 focus:outline-none focus:border-[#8C2F1B]"
+                  className="w-full text-xs px-3 py-2 rounded-lg bg-[#FAF0D5]/50 border border-[#8C2F1B]/20 focus:outline-none focus:border-[#8C2F1B]"
                 />
                 <input
                   type="text"
-                  placeholder="Delivery Address (in Faisalabad)"
+                  placeholder="Delivery Address in Faisalabad"
                   value={customerAddress}
                   onChange={e => setCustomerAddress(e.target.value)}
-                  className="w-full text-xs px-3.5 py-2 rounded-lg bg-[#FAF0D5]/50 border border-[#8C2F1B]/20 focus:outline-none focus:border-[#8C2F1B]"
+                  className="w-full text-xs px-3 py-2 rounded-lg bg-[#FAF0D5]/50 border border-[#8C2F1B]/20 focus:outline-none focus:border-[#8C2F1B]"
                 />
               </div>
 
@@ -388,7 +446,7 @@ export default function Menu({ cart, onUpdateQty }: MenuProps) {
               <button
                 disabled={cart.length === 0}
                 onClick={handleSendWhatsApp}
-                className={`w-full mt-4 py-3 px-4 rounded-xl font-['Baloo_2'] font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer ${
+                className={`w-full mt-3.5 py-3 px-4 rounded-xl font-['Baloo_2'] font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer ${
                   cart.length === 0
                     ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
                     : 'bg-[#25D366] hover:bg-[#20BD5A] text-white shadow-lg shadow-[#25D366]/30 active:scale-98'
@@ -400,11 +458,11 @@ export default function Menu({ cart, onUpdateQty }: MenuProps) {
                 <span>SEND ORDER ON WHATSAPP</span>
               </button>
               <div className="text-[11px] text-center text-[#2B1B12]/60 mt-2 font-['Mukta']">
-                We'll confirm your order and price on WhatsApp.
+                Order directly on WhatsApp: 03098027782
               </div>
 
               {orderSent && (
-                <div className="mt-3 p-2 bg-emerald-100 text-emerald-800 text-center rounded-lg text-xs font-['Mukta'] font-bold">
+                <div className="mt-2.5 p-2 bg-emerald-100 text-emerald-800 text-center rounded-lg text-xs font-['Mukta'] font-bold">
                   ✓ Order opened in WhatsApp! Send message to confirm.
                 </div>
               )}

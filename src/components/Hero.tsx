@@ -55,22 +55,22 @@ export default function Hero() {
           <div className="lg:col-span-7 flex flex-col justify-center">
             
             {/* Eyebrow Badge */}
-            <div className="inline-flex items-center gap-2 font-['Mukta'] text-[11px] sm:text-xs tracking-[0.25em] uppercase font-bold text-[#8C2F1B] bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full border border-[#8C2F1B]/15 shadow-xs w-fit mb-5">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#E8A63D] animate-ping" />
+            <div className="inline-flex items-center gap-2 font-['Mukta'] text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.25em] uppercase font-bold text-[#8C2F1B] bg-white/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#8C2F1B]/15 shadow-xs w-fit mb-4">
+              <span className="w-2 h-2 rounded-full bg-[#E8A63D] animate-ping" />
               FRESH MORNING NASHTA • 7:00 AM – 11:00 AM
             </div>
 
             {/* Main Headline: Halwa Puri, Aloo Paratha & Kitchen Full of Love */}
-            <div className="font-['Baloo_2'] font-black leading-[0.92] uppercase tracking-tight mb-4">
-              <span className="block whitespace-nowrap text-4xl sm:text-6xl md:text-7xl lg:text-[3.75rem] xl:text-[4.75rem] 2xl:text-[5.5rem] text-[#5C1D10]">
+            <div className="font-['Baloo_2'] font-black leading-[0.95] sm:leading-[0.92] uppercase tracking-tight mb-4">
+              <span className="block text-3xl sm:text-5xl md:text-6xl lg:text-[3.5rem] xl:text-[4.25rem] 2xl:text-[5rem] text-[#5C1D10]">
                 HALWA PURI &amp;
               </span>
-              <span className="block whitespace-nowrap text-4xl sm:text-6xl md:text-7xl lg:text-[3.75rem] xl:text-[4.75rem] 2xl:text-[5.5rem] text-[#5C1D10]">
+              <span className="block text-3xl sm:text-5xl md:text-6xl lg:text-[3.5rem] xl:text-[4.25rem] 2xl:text-[5rem] text-[#5C1D10]">
                 ALOO PARATHA
               </span>
 
               {/* Saffron Gold 3D Flip Word Container */}
-              <div className="h-[1.12em] overflow-hidden inline-flex items-center text-4xl sm:text-6xl md:text-7xl lg:text-[3.75rem] xl:text-[4.75rem] 2xl:text-[5.5rem] text-[#E8A63D] [perspective:1000px] whitespace-nowrap">
+              <div className="h-[1.15em] overflow-hidden inline-flex items-center text-3xl sm:text-5xl md:text-6xl lg:text-[3.5rem] xl:text-[4.25rem] 2xl:text-[5rem] text-[#E8A63D] [perspective:1000px]">
                 <div
                   key={wordIdx}
                   className="inline-flex [transform-style:preserve-3d] whitespace-nowrap"
@@ -86,7 +86,7 @@ export default function Hero() {
                       }}
                       className="inline-block"
                     >
-                      {char}
+                      {char === ' ' ? '\u00A0' : char}
                     </span>
                   ))}
                 </div>
@@ -94,19 +94,19 @@ export default function Hero() {
             </div>
 
             {/* Professional Cultural Identity Line (Single line, Nastaliq Calligraphy, Gold Accents) */}
-            <div className="relative flex items-center gap-3 my-2 max-w-xl">
-              <div className="h-[1.5px] w-8 sm:w-12 bg-gradient-to-r from-transparent to-[#E8A63D]" />
+            <div className="relative flex items-center gap-2 sm:gap-3 my-2 max-w-xl">
+              <div className="h-[1.5px] w-6 sm:w-12 bg-gradient-to-r from-transparent to-[#E8A63D] shrink-0" />
               <div
                 dir="rtl"
-                className="font-['Noto_Nastaliq_Urdu',serif] font-bold text-2xl sm:text-3xl lg:text-[2rem] leading-normal text-[#5C1D10] whitespace-nowrap drop-shadow-xs"
+                className="font-['Noto_Nastaliq_Urdu',serif] font-bold text-lg sm:text-2xl lg:text-[1.85rem] leading-normal text-[#5C1D10] drop-shadow-xs"
               >
                 حلوہ پوری، آلو پراٹھا اور محبت بھرا دیسی ناشتہ
               </div>
-              <div className="h-[1.5px] flex-1 max-w-[100px] bg-gradient-to-r from-[#E8A63D] to-transparent" />
+              <div className="h-[1.5px] flex-1 max-w-[80px] bg-gradient-to-r from-[#E8A63D] to-transparent shrink-0" />
             </div>
 
             {/* Hero Subtitle */}
-            <p className="font-['Mukta'] text-base sm:text-lg text-[#2B1B12]/80 max-w-xl leading-relaxed mt-3 mb-8">
+            <p className="font-['Mukta'] text-sm sm:text-base lg:text-lg text-[#2B1B12]/80 max-w-xl leading-relaxed mt-2 mb-6 sm:mb-8">
               Fresh halwa puri, stuffed parathas, and desi chai — made the way baji makes it at home. Browse the menu, build your order chit, and send it straight to us on WhatsApp.
             </p>
 

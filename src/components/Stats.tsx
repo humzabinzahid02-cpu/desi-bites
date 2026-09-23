@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 
 const STATS = [
-  { value: 12, suffix: '+', label: 'Years of Secret Spices' },
-  { value: 50, suffix: 'k+', label: 'Hot Orders Delivered' },
-  { value: 35, suffix: '+', label: 'Clay-Pot & Tandoori Recipes' },
-  { value: 99, suffix: '%', label: 'Five-Star Taste Reviews' },
+  { value: 12, suffix: '+', label: 'Years of Mohalla Recipes' },
+  { value: 50, suffix: 'k+', label: 'Hot Nashtas Served' },
+  { value: 100, suffix: '%', label: 'Fresh Daily Ingredients' },
+  { value: 99, suffix: '%', label: 'Ghar Ka Zaiqa Reviews' },
 ]
 
 function CountUp({ target, suffix }: { target: number; suffix: string }) {
@@ -42,62 +42,31 @@ function CountUp({ target, suffix }: { target: number; suffix: string }) {
 
 export default function Stats() {
   return (
-    <section style={{
-      background: '#FFFFFF',
-      borderTop: '1px solid rgba(140, 47, 27, 0.12)',
-      borderBottom: '1px solid rgba(140, 47, 27, 0.12)',
-      padding: '44px clamp(24px, 6vw, 100px)',
-    }}>
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'auto 1fr',
-        alignItems: 'center',
-        gap: '32px 60px',
-        maxWidth: 1240,
-        margin: '0 auto',
-      }}>
-        <div style={{ borderRight: '1px solid rgba(140, 47, 27, 0.15)', paddingRight: 48 }}>
-          <div style={{
-            fontFamily: "'Baloo 2', sans-serif",
-            fontSize: '13px',
-            fontWeight: 800,
-            letterSpacing: '0.15em',
-            textTransform: 'uppercase',
-            color: '#8C2F1B',
-            lineHeight: 1.5,
-          }}>
-            Trusted<br />By Generations<br />In Faisalabad
+    <section className="bg-white border-t border-b border-[#8C2F1B]/12 py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center gap-6 md:gap-12">
+        
+        {/* Eyebrow Label */}
+        <div className="md:border-r border-[#8C2F1B]/15 md:pr-10 shrink-0">
+          <div className="font-['Baloo_2'] text-xs sm:text-sm font-extrabold tracking-[0.15em] uppercase text-[#8C2F1B] leading-tight">
+            Baji Nazia<br className="hidden md:inline" /> Ka Home Kitchen<br />
+            <span className="text-[#2B1B12]/60 font-semibold normal-case text-xs">Faisalabad Mohalla</span>
           </div>
         </div>
 
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
-          gap: '16px 40px',
-        }}>
+        {/* Stats Grid - 2 cols on mobile, 4 on desktop */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 flex-1">
           {STATS.map(s => (
             <div key={s.label}>
-              <div style={{
-                fontFamily: "'Baloo 2', sans-serif",
-                fontSize: 'clamp(36px, 5vw, 52px)',
-                fontWeight: 900,
-                lineHeight: 1,
-                color: '#5C1D10',
-              }}>
+              <div className="font-['Baloo_2'] text-3xl sm:text-4xl lg:text-5xl font-black text-[#5C1D10] leading-none">
                 <CountUp target={s.value} suffix={s.suffix} />
               </div>
-              <div style={{
-                fontFamily: "'Mukta', sans-serif",
-                fontSize: '13px',
-                color: '#8C2F1B',
-                marginTop: 4,
-                fontWeight: 600,
-              }}>
+              <div className="font-['Mukta'] text-xs sm:text-sm text-[#8C2F1B] mt-1 font-semibold">
                 {s.label}
               </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   )

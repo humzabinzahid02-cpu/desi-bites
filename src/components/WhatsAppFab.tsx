@@ -5,7 +5,7 @@ export default function WhatsAppFab() {
 
   const handleClick = () => {
     window.open(
-      'https://wa.me/923291807782?text=Hi%20Desi%20Bite!%20I%20want%20to%20order%20nashta.',
+      'https://wa.me/923098027782?text=Hi%20Baji%20Nazia!%20I%20want%20to%20order%20nashta.',
       '_blank'
     )
   }

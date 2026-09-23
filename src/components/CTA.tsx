@@ -13,7 +13,7 @@ export default function CTA({ onOrderClick }: CTAProps) {
   }
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/923291807782?text=Hi%20Desi%20Bite!%20I%20would%20like%20to%20order%20nashta.', '_blank')
+    window.open('https://wa.me/923098027782?text=Hi%20Baji%20Nazia!%20I%20would%20like%20to%20order%20nashta.', '_blank')
   }
 
   return (
@@ -99,7 +99,7 @@ export default function CTA({ onOrderClick }: CTAProps) {
                   Direct WhatsApp Order
                 </span>
                 <h4 className="font-['Baloo_2'] font-bold text-base text-white uppercase mt-0.5 mb-1">
-                  +92 329 1807782
+                  03098027782
                 </h4>
                 <p className="font-['Mukta'] text-xs text-[#FAF0D5]/70 m-0">
                   Instant order confirmation &amp; delivery time

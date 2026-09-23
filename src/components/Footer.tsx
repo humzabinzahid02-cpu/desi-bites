@@ -3,7 +3,7 @@ import React from 'react'
 export default function Footer() {
   const handleOrderClick = (e: React.MouseEvent) => {
     e.preventDefault()
-    window.open('https://wa.me/923291807782?text=Hi%20Desi%20Bite!%20I%20want%20to%20order%20nashta.', '_blank')
+    window.open('https://wa.me/923098027782?text=Hi%20Baji%20Nazia!%20I%20want%20to%20order%20nashta.', '_blank')
   }
 
   const scrollToMenu = (e: React.MouseEvent) => {
@@ -88,7 +88,7 @@ export default function Footer() {
               Contact &amp; Orders
             </div>
             <p style={{ fontFamily: "'Mukta', sans-serif", fontSize: '14px', color: '#FAF0D5', opacity: 0.85, lineHeight: 1.8, margin: 0 }}>
-              📞 WhatsApp: <a href="https://wa.me/923291807782" target="_blank" rel="noreferrer" style={{ color: '#F4CE7F', textDecoration: 'underline' }}>+92 329 1807782</a><br />
+              📞 WhatsApp: <a href="https://wa.me/923098027782" target="_blank" rel="noreferrer" style={{ color: '#F4CE7F', textDecoration: 'underline' }}>03098027782</a><br />
               📍 Location: Faisalabad
             </p>
             <div style={{ marginTop: 14 }}>
