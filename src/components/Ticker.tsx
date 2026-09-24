@@ -9,6 +9,7 @@ const ITEMS = [
   'Cheese Omelette',
   'Meetha Anda',
   'Plain / Half Fry Egg',
+  'Chai / Tea (Rs. 100)',
   'Baji Nazia Ka Home Kitchen',
 ]
 

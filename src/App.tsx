@@ -79,6 +79,7 @@ export default function App() {
             'Hand-Stuffed Aloo Paratha',
             'Chicken Cheese Paratha',
             'Fluffy Cheese Omelette',
+            'Karak Doodh Patti Chai',
             'Morning Nashta 7 AM – 11 AM',
             'Ghar Ka Zaiqa',
           ]}

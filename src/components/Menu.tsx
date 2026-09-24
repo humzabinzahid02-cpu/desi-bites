@@ -1,10 +1,64 @@
 import { useState } from 'react'
 
+function StaggeredSmoke() {
+  return (
+    <span className="relative inline-flex items-center justify-center w-6 h-6 shrink-0 overflow-visible" title="Steaming Fresh">
+      {/* 3 Staggered Smoke Wisps */}
+      <svg
+        className="absolute -top-3.5 left-1/2 -translate-x-1/2 overflow-visible pointer-events-none"
+        width="18"
+        height="18"
+        viewBox="0 0 18 18"
+        fill="none"
+      >
+        <path
+          d="M 4 16 Q 1 10, 4 6 Q 7 2, 4 0"
+          stroke="#8C2F1B"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          className="smoke-wisp-1"
+        />
+        <path
+          d="M 9 16 Q 12 10, 9 6 Q 6 1, 9 0"
+          stroke="#E8A63D"
+          strokeWidth="2"
+          strokeLinecap="round"
+          className="smoke-wisp-2"
+        />
+        <path
+          d="M 14 16 Q 11 10, 14 6 Q 17 2, 14 0"
+          stroke="#8C2F1B"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          className="smoke-wisp-3"
+        />
+      </svg>
+
+      {/* Tea Cup Icon */}
+      <svg
+        width="15"
+        height="15"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#8C2F1B"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="relative z-10 shrink-0"
+      >
+        <path d="M17 8h1a4 4 0 1 1 0 8h-1" />
+        <path d="M3 8h14v7a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8z" />
+        <line x1="2" y1="21" x2="18" y2="21" />
+      </svg>
+    </span>
+  )
+}
+
 export interface MenuItem {
   id: string
   name: string
   nameUrdu: string
-  category: 'puri' | 'parathas' | 'eggs'
+  category: 'puri' | 'parathas' | 'eggs' | 'chai'
   price: number
   desc: string
   tag?: string
@@ -117,6 +171,17 @@ export const MENU_ITEMS: MenuItem[] = [
     desc: 'Fluffy farm omelette stuffed with melted cheese.',
     tag: 'CHEESY',
   },
+
+  // 4. Chai / Tea
+  {
+    id: 'karak-chai',
+    name: 'Chai / Tea (Karak Doodh Patti)',
+    nameUrdu: 'کڑک چائے',
+    category: 'chai',
+    price: 100,
+    desc: 'Freshly brewed traditional Pakistani karak doodh patti chai simmered with cardamom and pure milk.',
+    tag: 'HOT & FRESH',
+  },
 ]
 
 const CATEGORIES = [
@@ -124,6 +189,7 @@ const CATEGORIES = [
   { id: 'puri', label: 'Puri & Chanay' },
   { id: 'parathas', label: 'Parathas' },
   { id: 'eggs', label: 'Eggs & Omelettes' },
+  { id: 'chai', label: 'Chai / Tea' },
 ]
 
 interface MenuProps {
@@ -194,7 +260,7 @@ export default function Menu({ cart, onUpdateQty }: MenuProps) {
             BAJI NAZIA KA HOME KITCHEN • DAILY FRESH
           </div>
           <h2 className="font-['Baloo_2'] font-black text-3xl sm:text-5xl lg:text-6xl text-[#5C1D10] uppercase tracking-tight leading-[1] mb-3">
-            ناشتہ مینو • Nashta Menu
+            ناشتہ مینو • <span className="animate-shimmer">Nashta Menu</span>
           </h2>
           <p className="font-['Mukta'] text-sm sm:text-base text-[#2B1B12]/80 leading-relaxed max-w-xl mx-auto">
             100% Ghar Ka Khana • Halal &amp; Delicious. Tap <span className="font-bold text-[#8C2F1B]">+</span> on any item to build your order chit.
@@ -227,22 +293,30 @@ export default function Menu({ cart, onUpdateQty }: MenuProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
           
           {/* Menu Cards Grid */}
-          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-            {filteredItems.map(item => {
+          <div key={activeCategory} className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+            {filteredItems.map((item, idx) => {
               const qty = getItemQty(item.id)
               return (
                 <div
                   key={item.id}
-                  className="bg-white rounded-2xl p-4 sm:p-5 border border-[#8C2F1B]/10 shadow-[0_4px_16px_rgba(92,29,16,0.04)] hover:shadow-[0_8px_24px_rgba(92,29,16,0.08)] hover:border-[#8C2F1B]/25 transition-all duration-200 flex flex-col justify-between"
+                  style={{
+                    animation: `menuCardFadeIn 320ms cubic-bezier(0.16, 1, 0.3, 1) ${Math.min(idx * 35, 280)}ms backwards`,
+                  }}
+                  className={`group bg-white rounded-2xl p-4 sm:p-5 border shadow-[0_4px_16px_rgba(92,29,16,0.04)] hover:shadow-[0_12px_28px_rgba(92,29,16,0.12)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between ${
+                    item.category === 'chai'
+                      ? 'border-[#E8A63D]/60 ring-2 ring-[#E8A63D]/25 bg-gradient-to-br from-white via-white to-[#FBF1DE]/60'
+                      : 'border-[#8C2F1B]/10 hover:border-[#8C2F1B]/30'
+                  }`}
                 >
                   <div>
-                    {/* Top Row: Tag */}
-                    <div className="flex items-center justify-between gap-2 mb-1.5 min-h-[22px]">
-                      <span className="font-['Mukta'] text-[11px] font-bold tracking-wider text-[#8C2F1B]/70 uppercase">
+                    {/* Top Row: Tag & Staggered Smoke Animation */}
+                    <div className="flex items-center justify-between gap-2 mb-2 min-h-[26px]">
+                      <span className="font-['Mukta'] text-[11px] font-bold tracking-wider text-[#8C2F1B]/70 uppercase flex items-center gap-1.5">
+                        {item.category === 'chai' && <StaggeredSmoke />}
                         Ghar Ka Khana
                       </span>
                       {item.tag && (
-                        <span className="font-['Baloo_2'] text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-[#E8A63D]/20 text-[#8C2F1B] border border-[#E8A63D]/40">
+                        <span className="inline-flex items-center gap-1 font-['Baloo_2'] text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full bg-[#E8A63D]/20 text-[#8C2F1B] border border-[#E8A63D]/40">
                           {item.tag}
                         </span>
                       )}
@@ -250,8 +324,13 @@ export default function Menu({ cart, onUpdateQty }: MenuProps) {
 
                     {/* Title & Urdu */}
                     <div className="flex items-baseline justify-between gap-2">
-                      <h3 className="font-['Baloo_2'] font-bold text-lg sm:text-xl text-[#5C1D10] leading-snug">
-                        {item.name}
+                      <h3 className="font-['Baloo_2'] font-bold text-lg sm:text-xl text-[#5C1D10] group-hover:text-[#8C2F1B] transition-colors leading-snug flex items-center gap-2">
+                        <span>{item.name}</span>
+                        {item.category === 'chai' && (
+                          <span className="text-[10px] bg-[#8C2F1B] text-white px-2 py-0.5 rounded-full font-['Baloo_2'] font-extrabold tracking-wider uppercase shadow-xs">
+                            TEA
+                          </span>
+                        )}
                       </h3>
                     </div>
                     <div dir="rtl" className="font-['Noto_Nastaliq_Urdu',serif] text-base sm:text-lg font-bold text-[#8C2F1B] mb-2 leading-relaxed">

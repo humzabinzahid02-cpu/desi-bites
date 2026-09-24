@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import { FluidMorphBg, DESI_HERO_COLORS } from './FluidMorphBg'
 
-const FLIP_WORDS = ['WITH LOVE', 'HOT PURIS', 'GHAR KA ZAIQA', 'CRISPY PARATHA', 'DESI LAZZAT']
+const FLIP_WORDS = ['WITH LOVE', 'HOT PURIS', 'KARAK CHAI', 'GHAR KA ZAIQA', 'CRISPY PARATHA', 'DESI LAZZAT']
 
 export default function Hero() {
   const [wordIdx, setWordIdx] = useState(0)
@@ -145,8 +145,8 @@ export default function Hero() {
           <div className="lg:col-span-5 w-full relative flex justify-center lg:justify-end">
             
             {/* Ambient Warm Golden Glow behind Card */}
-            <div className="absolute -top-12 -right-8 w-80 sm:w-[450px] h-80 sm:h-[450px] bg-[#E8A63D]/25 rounded-full blur-3xl pointer-events-none -z-10" />
-            <div className="absolute -bottom-10 -left-8 w-72 sm:w-96 h-72 sm:h-96 bg-[#8C2F1B]/20 rounded-full blur-3xl pointer-events-none -z-10" />
+            <div style={{ transform: 'translateZ(0)' }} className="absolute -top-12 -right-8 w-80 sm:w-[450px] h-80 sm:h-[450px] bg-[#E8A63D]/25 rounded-full blur-3xl pointer-events-none -z-10" />
+            <div style={{ transform: 'translateZ(0)' }} className="absolute -bottom-10 -left-8 w-72 sm:w-96 h-72 sm:h-96 bg-[#8C2F1B]/20 rounded-full blur-3xl pointer-events-none -z-10" />
 
             {/* Video Frame Card */}
             <div className="relative rounded-[32px] overflow-hidden bg-[#1C100B] border border-[#E8A63D]/40 shadow-[0_30px_70px_rgba(43,27,18,0.35)] w-full max-w-[520px] aspect-[4/3] sm:aspect-[16/11] flex flex-col justify-between">

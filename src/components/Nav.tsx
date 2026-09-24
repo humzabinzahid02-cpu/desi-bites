@@ -46,14 +46,16 @@ export default function Nav({ cartCount = 0, onOpenCart }: NavProps) {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
-      background: scrolled ? 'rgba(251, 241, 222, 0.88)' : 'rgba(251, 241, 222, 0.65)',
-      backdropFilter: 'blur(20px) saturate(180%)',
-      WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+      background: scrolled ? 'rgba(251, 241, 222, 0.94)' : 'rgba(251, 241, 222, 0.82)',
+      backdropFilter: 'blur(10px)',
+      WebkitBackdropFilter: 'blur(10px)',
       borderBottom: '1px solid rgba(140, 47, 27, 0.12)',
       boxShadow: scrolled
-        ? '0 10px 30px -4px rgba(92, 29, 16, 0.08), inset 0 1px 1px 0 rgba(255, 255, 255, 0.9)'
-        : '0 4px 20px -2px rgba(92, 29, 16, 0.04), inset 0 1px 1px 0 rgba(255, 255, 255, 0.8)',
-      transition: 'background 350ms ease, box-shadow 350ms ease, border-color 350ms ease',
+        ? '0 6px 20px -4px rgba(92, 29, 16, 0.08)'
+        : '0 2px 10px -2px rgba(92, 29, 16, 0.04)',
+      transform: 'translateZ(0)',
+      willChange: 'background, box-shadow',
+      transition: 'background 300ms ease, box-shadow 300ms ease',
     }}>
       {/* Specular Liquid Glass Top Gleam */}
       <div style={{

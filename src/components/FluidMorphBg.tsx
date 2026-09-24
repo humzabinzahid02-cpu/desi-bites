@@ -62,24 +62,14 @@ export function FluidMorphBg({
   return (
     <div
       className={cn("relative overflow-hidden w-full h-full", className)}
-      style={{ backgroundColor }}
+      style={{ backgroundColor, willChange: 'transform', transform: 'translateZ(0)' }}
     >
       <svg
         className="absolute inset-0 w-full h-full object-cover"
         preserveAspectRatio="none"
         viewBox={viewBox}
+        style={{ willChange: 'contents', transform: 'translateZ(0)' }}
       >
-        <defs>
-          <filter id="desi-fluid-shadow" x="-8%" y="-8%" width="120%" height="120%">
-            <feDropShadow
-              dx="0"
-              dy="6"
-              stdDeviation="10"
-              floodColor="#2B1B12"
-              floodOpacity="0.18"
-            />
-          </filter>
-        </defs>
         {pathsData.map((dList, index) => {
           const variance = (index % 3) * 0.7;
           const pathDuration = duration + variance;
@@ -90,7 +80,7 @@ export function FluidMorphBg({
               key={index}
               d={dList[0]}
               fill={colors[index % colors.length]}
-              filter="url(#desi-fluid-shadow)"
+              opacity={0.85}
             >
               <animate
                 attributeName="d"
